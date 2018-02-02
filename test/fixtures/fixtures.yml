@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team_id: 1
+  away_team: MyString
+  stadium: MyString
+  time: 2018-02-02 15:25:04
+  date: 2018-02-02
+
+two:
+  team_id: 1
+  away_team: MyString
+  stadium: MyString
+  time: 2018-02-02 15:25:04
+  date: 2018-02-02

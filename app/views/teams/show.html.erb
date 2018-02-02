@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<body style="background-color:#3498DB;">
+<p>
+  <strong>Team name:</strong>
+  <%= @team.team_Name %>
+</p>
+
+<p>
+  <strong>Crest:</strong>
+  <%= @team.crest %>
+</p>
+
+<p>
+  <strong>League:</strong>
+  <%= @team.league %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @team.city %>
+</p>
+
+<p>
+  <strong>Stadium:</strong>
+  <%= @team.stadium %>
+</p>
+
+<% @team.fixtures.each do |fixture| %>
+	Playing against <%= fixture.away_team %>
+	, Date: <%= fixture.date %>
+	, Time: <%= fixture.time %>
+	, Stadium: <%= fixture.time %>
+	<br>
+<% end %>
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>
+</body>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<h2><%= link_to 'Fixtures', fixtures_path %>
+<%= link_to 'Tickets', tickets_path %>
+<%= link_to 'Users', users_path %>
+</h2>
+<h2>Teams</h2>
+<body style="background-color:#3498DB;">
+
+<table>
+  <thead>
+    <tr>
+      <th>Team name</th>
+      <th>Crest</th>
+      <th>League</th>
+      <th>City</th>
+      <th>Stadium</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.team_Name %></td>
+        <td><%= image_tag team.crest, :size=> "150x150" %></td>
+        <td><%= team.league %></td>
+        <td><%= team.city %></td>
+        <td><%= team.stadium %></td>
+        <td><%= link_to 'Show', team %></td>
+        <td><%= link_to 'Edit', edit_team_path(team) %></td>
+        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</body>
+<br>
+
+<%= link_to 'New Team', new_team_path %>

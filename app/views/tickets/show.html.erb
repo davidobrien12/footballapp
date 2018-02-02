@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<body style="background-color:#3498DB;">
+<p>
+  <strong>Fixture:</strong>
+  <%= @ticket.fixture_id %>
+</p>
+
+<p>
+  <strong>Seat type:</strong>
+  <%= @ticket.seat_type %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @ticket.price %>
+</p>
+
+<p>
+  <strong>No of tickets:</strong>
+  <%= @ticket.no_of_tickets %>
+</p>
+
+<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
+<%= link_to 'Back', tickets_path %>
+</body>

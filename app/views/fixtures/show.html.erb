@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<body style="background-color:#3498DB;">
+<p>
+  <strong>Team:</strong>
+  <%= @fixture.team_id %>
+</p>
+
+<p>
+  <strong>Away team:</strong>
+  <%= @fixture.away_team %>
+</p>
+
+<p>
+  <strong>Stadium:</strong>
+  <%= @fixture.stadium %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @fixture.time %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @fixture.date %>
+</p>
+
+<%= link_to 'Edit', edit_fixture_path(@fixture) %> |
+<%= link_to 'Back', fixtures_path %>
+</body>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<body style="background-color:#3498DB;">
+<p>
+  <strong>User name:</strong>
+  <%= @user.user_name %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @user.dob %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Billing details:</strong>
+  <%= @user.billing_details %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+</body>
