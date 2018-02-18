@@ -1,9 +1,6 @@
 class User < ApplicationRecord
-	validates :user_name, presence: true
+	has_secure_password
 	validates :user_name, uniqueness: true
-	validates :password, length: { in: 6..20 }
-	validates :email, presence: true
-	validates :email, uniqueness: true
+	validates :password_digest, length: { minimum: 6 }
 	validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
-	validates :billing_details, presence: true
 end

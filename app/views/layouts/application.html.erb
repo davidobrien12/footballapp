@@ -8,12 +8,39 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  
   <body>
-  <div id="banner">
-	<%= image_tag("tickets.png", :size => "800x200")%>
-	
+  
+  <header class = "navbar navbar-fixed-top navbar-inverse" >
+    <div class = "container"
+      
+      <nav>
+        <ul class = "nav navbar-nav navbar-right" >
+		  <% if !signed_in? %>
+			<li><%= link_to "Sign in", login_path %></li>
+		<% else %>
+			<li>Signed in as <%= @current_user.user_name %></li>
+			<li><%= link_to "Sign out", logout_path %></li>
+			
+		<% end %>
+          <li><%= link_to "About", '#' %></li>
+          <%= link_to "GitHub Page", 'https://github.com/davidobrien12' %>
+		  <%= link_to "Home", root_path %>
+		  <%= mail_to "C15426428@mydit.ie", "Contact Us" %>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+<% flash.each do |key,value| %>
+	<div class = "flash <%=key%>">
+		<%=value %>
 	</div>
+<%end%>
+
+
+	<br> <br> <br>
     <%= yield %>
-	
   </body>
 </html>

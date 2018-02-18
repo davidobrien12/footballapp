@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-<h2><%= link_to 'Home', teams_path %>
+<h2><%= link_to 'Teams', teams_path %>
+<%= link_to 'Fixtures', fixtures_path %>
+<%= link_to 'Tickets', tickets_path %>
 </h2>
 <h1>Users</h1>
 <body style="background-color:#3498DB;">
@@ -7,7 +9,7 @@
   <thead>
     <tr>
       <th>User name</th>
-      <th>Password</th>
+      <th>Password digest</th>
       <th>Dob</th>
       <th>Email</th>
       <th>Billing details</th>
@@ -19,7 +21,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.user_name %></td>
-        <td><%= user.password %></td>
+        <td><%= user.password_digest %></td>
         <td><%= user.dob %></td>
         <td><%= user.email %></td>
         <td><%= user.billing_details %></td>
@@ -33,4 +35,5 @@
 
 <br>
 </body>
+
 <%= link_to 'New User', new_user_path %>
